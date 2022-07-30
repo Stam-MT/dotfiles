@@ -1,0 +1,5 @@
+# flog
+git config --global alias.flog "log --graph --abbrev-commit --pretty='format:%Cgreen%cn  %C(auto)%d%Creset %s [%h]' --all"
+
+# news
+git config --global alias.news "flog --date-order"
