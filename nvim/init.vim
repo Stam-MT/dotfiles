@@ -59,9 +59,9 @@ call plug#begin("~/.config/nvim/plugged")
  "Plug 'scrooloose/nerdtree'    "file explorer
  Plug 'neovim/nvim-lspconfig'
  Plug 'nvim-lua/completion-nvim'
- "Plug 'preservim/nerdcommenter'"comment out lines easily
- "Plug 'honza/vim-snippets'     "snippets engine
- "Plug 'SirVer/ultisnips'       "collection of snippets
+ Plug 'rakr/vim-one'
+ Plug 'itchyny/lightline.vim'
+ Plug 'tpope/vim-fugitive'      "git integration for lightline
 call plug#end()
 
 " Script - Vim jump to the last position when reopening a file
@@ -70,8 +70,24 @@ if has("autocmd")
     \| exe "normal! g'\"" | endif
 endif
 
-" Language Server Stuff
-  " neovim LSP configuration
+  "theme vim-one
+colorscheme one
+set background=dark
+
+  "lightline
+set showmode!                   "hide vim mode, since lighline shows it
+let g:lightline = {
+      \ 'colorscheme': 'one',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
+
+  "nvim-lspconfig
 lua require('lua_config')
   " allow Tag/Shift Tab to cycle completion options
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
