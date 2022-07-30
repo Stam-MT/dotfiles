@@ -62,7 +62,7 @@ call plug#begin("~/.config/nvim/plugged")
  Plug 'mhinz/vim-startify'      "add vim start page
  "Plug 'ryanoasis/vim-devicons' "dev icons for nerdtree
  "Plug 'scrooloose/nerdtree'    "file explorer
- Plug 'neovim/nvim-lspconfig'
+ Plug 'neovim/nvim-lspconfig'   "language server protocol
  Plug 'nvim-lua/completion-nvim'
  Plug 'rakr/vim-one'
  Plug 'itchyny/lightline.vim'
