@@ -27,3 +27,8 @@
 - pip3 install 'python-lsp-server[all]'
 - add content to the bottom of lsp_config.lua:
   lsp.pylsp.setup{on_attach=custom_attach}
+
+## C# (csharp-ls)
+- dotnet tool install --global csharp-ls
+- add content to the bottom of lsp_config.lua:
+  lsp.csharp-ls.setup{on_attach=custom_attach}

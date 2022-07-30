@@ -39,3 +39,4 @@ end
 
 local lsp = require('lspconfig')
 lsp.pylsp.setup{on_attach=custom_attach}
+lsp.csharp_ls.setup{}
