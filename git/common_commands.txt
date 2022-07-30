@@ -1,0 +1,300 @@
+
+------------------------------
+	config
+------------------------------
+
+config-Ebenen
+- system (alle user am PC)
+- global (aktueller user)
+- local (aktuelles repo)
+
+git config --global -e				öffnet gitconfig datei im default editor
+
+git config --global user.name <name>
+git config --global user.email <mail>
+
+git config --global core.editor <editor>
+
+git config --system core.autocrlf <value>	true bei windows / input bei mac
+
+git config --global credentials.helper store	(speichert user + pw)
+git config --global credentials.helper cache	(speichert user + pw temporär)
+
+
+
+------------------------------
+	PGP
+------------------------------
+
+git config --global user.signingkey <priv.keyID>
+
+git config --local commit.gpgSign <bool>
+git config --local push.gpgSign <bool>
+
+
+
+------------------------------
+	SSH
+------------------------------
+
+
+
+------------------------------
+	initialization
+------------------------------
+
+git init
+git init -b <branch_name>
+git clone <repo_path> [sub_direcory]
+
+
+
+------------------------------
+	changes
+------------------------------
+
+git status
+git diff [file]
+git diff --staged
+git show <commit_id>
+
+
+
+------------------------------
+	stage
+------------------------------
+
+git status
+git restore .
+
+git add <file1> <file2>
+git add *.cs
+git add .			(existierende files)
+git add -A			(auch gelöschte files)
+
+git restore --staged <file>	(unstage)
+
+git rm <file>			(delete and stage file)
+git mv <file1> <file2>	(rename file and stage it)
+
+git restore <file>		(discard changes)
+
+git ls-files			(show files in staging area)
+
+
+
+------------------------------
+	commit
+------------------------------
+
+git commit -m "comment"
+git commit                    (message in default editor)
+git commit -am "comment"      (stage all and commit)
+
+
+
+------------------------------
+	history
+------------------------------
+
+--- filter ---
+git log -5			die letzten 5 commits
+git log *Class.cs		nur Änderungen an Class.cs
+git los -S <text>               wo Anzahl Vorkommnisse <text> in files geändert
+git log --author "Bob"          nur commits von "Bob..." Leuten
+git log <branch>		log von fremdem branch anzeigen
+
+git log --no-merges				keine merge commits
+git log --after 15.04.2021-13:12
+git log --before 01.01.2020
+git log --grep <a> --grep <b>			match a or b in commit msg
+git log --grep <a> --grep <b> --all-match	match a and b in commit msg
+git log --grep <text> --invert-grep		commits ohne match
+
+git log <ref1>..<ref2>		log commits, not reachable from ref1 but from ref2
+git log ^<ref1> <ref2>		eg: git log origin/master..HEAD -> push preview
+				eg: git log master..develop -> merge preview
+
+--- format ---
+git log --graph
+git log -p			zeigt diffs pro commit
+git log --stat			zeigt geänderte files
+git log --abbrev-commit		kürzt den fingerprint
+git log --all			zeigt alle branches
+
+
+
+------------------------------
+	branch
+------------------------------
+
+git branch			(see local branches)
+git branch -a			(see also remote branches)
+
+git branch <branch>		(create new branch)
+git checkout <branch>		(switch branch)
+git checkout -b <branch>	(combines the two above)
+git checkout <labeltag>		(go to commit at tag)
+git checkout <commitID>		(set HEAD to commit (detatched HEAD state))
+
+git branch -mv <old> <new>	(rename branch)
+
+git branch -d <branch>		(delete branch)
+git branch -D <branch>		(force delete branch)
+
+git branch -u <remote>/<branch>	(set upstream)
+
+git checkout <remotebranch>	(create local branch off remotebranch)
+git checkout -b <branchname> <remote>/<branch>	(with different name)
+
+
+
+------------------------------
+	stash
+------------------------------
+
+git stash
+git stash push -m <comment>	(stash modified tracked files)
+git stash push -u -m <comment>	(stash also untracked)
+
+git stash list
+git stash show <id>
+
+git stash apply <id>
+git stash pop <id>		(apply + delete)
+
+git stash drop <id>		(delete)
+git stash clear			(delete all)
+
+
+
+------------------------------
+	rückgängig machen
+------------------------------
+
+git commit --amend		Letzten commit durch neuen ersetzen mit
+				aktueller Staging Area. Erlaubt somit
+				typos zu fixen oder files zu adden.
+				! ! Nicht nutzen, wenn bereits gepusht ! !
+
+git restore <file>		undo changes in working tree
+
+
+
+------------------------------
+	merge
+------------------------------
+
+git merge			(fast forward (after fetch))
+git merge <branch>		(merge branch into current)
+
+git merge <remote> <branch>	(merge remote branch into local)
+
+
+
+------------------------------
+	rebase
+------------------------------
+
+! ! Do not rebase commits that exist outide your repository and that people may have based work on ! !
+
+git rebase <bb>			rebase HEAD onto bb (all since common ancestor)
+git rebase <bb> <tb>		rebase tb onto bb (HEAD independent)
+git rebase --onto <bb> <sb> <tb>rebase tb (since diverge from sb) to bs
+
+After rebase, you must fast forward the branch that was rebased onto (git merge).
+
+<bb> = base branch
+<tb> = topic branch
+<sb> = since branch
+
+
+
+------------------------------
+	remote
+------------------------------
+
+Remote-tracking branches sind branches, die wir nicht ändern können, da sie immer fest den Stand des branches auf dem Reomte tracken. Sie haben die Form origin/branchname.
+Tracking banches sind lokale branches, die einen "upstream" haben. Dieser Upstream ist der remote branch, den sie tracken. Ist ein upstream gesetzt, können commands wie git pull oder git push auch ohne Angabe vom remote funktionieren. Sie nutzen den upstream als deault.
+
+git remote ...
+...				(list all remotes)
+... -v				(list all remotes with urls)
+... get-url <remote>
+... show <remote>		(see all remote branches)
+
+... add <name> <url>
+... rename <old> <new>
+... rm <remote>
+
+git fetch [remote]
+git pull [<remote> <branch>]	(fetch+merge)
+
+git push -u <remote> <branch>	(push + set remote as upstream)
+git push <remote> <localbranch>:<remotebranch>	(push but name remote branch different)
+git push
+
+git push <remote> --delete <branch>	(delete remote branch)
+
+
+
+------------------------------
+	tags
+------------------------------
+
+Lightweigt tag ist einfach nur ein Pointer auf commit + Label.
+Annotated tag ist ganzes Objekt mit Checksum, Tagger-Name, Zeit, Label, Msg, Signatur.
+
+git tag					list all tags
+git tag -l "v1.5.*"			list all tags with msg pattern
+
+git show <taglabel>			lightweigt: show commit
+					annotated:  show commit + tag object
+
+git tag <label> [commitID]		create lightweight tag
+git tag -a <label> -m <msg> [commitID]	create annotated tag
+
+git push <remote> <taglabel>		pushes a tag (does not happen on normal push)
+git push <remote> --tags		pushes all tags
+
+git tag -d <taglabel>
+git push <remote> --delete <taglabel>	delete tag on remote
+
+
+
+
+------------------------------
+	submodule
+------------------------------
+
+git submodule update --init	(first time)
+gut submodule update
+
+
+
+------------------------------
+	my aliasses
+------------------------------
+
+git config --global alias.flog "log --graph --abbrev-commit --pretty='format:%Cgreen%cn %C(auto)%d%Creset %s [%h]' --all"
+git congig --global alias.news "flog --date-order"
+
+
+
+------------------------------
+	plumbing
+------------------------------
+
+these are low level commands, that are not designed to be used by the end user.
+
+git rev-parse <reference>		get full hash a branch, tag, ... points to
+
+git reflog				show log of last objects the HEAD pointed to
+					example use: git show HEAD@{5}
+
+git show master@{yesterday}		show commit master was on yesterday (using reflog)
+
+ref^ / ref^2				refers to direct parent of hash, HEAD, branch, ...
+					(merge commit may have two direct parents)
+
+ref~ / ref~4				refers to (in)direct parent of ref
