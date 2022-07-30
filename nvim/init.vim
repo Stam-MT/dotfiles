@@ -25,9 +25,13 @@ set incsearch			"see search results while typing, see :incsear.
 set ignorecase			"ignore case when searching
 set hlsearch incsearch		"highlight previous search pattern with incsearch
 
+
+
 " Python
 set colorcolumn=80		"show color when line reaches pep8 standards
 highlight ColorColumn ctermbg=9	"display bright red bar at color column number
+
+
 
 " Keybindings                   "inoremap: insertmode, nnoremap: normmalmode
 set splitright
@@ -51,10 +55,11 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+
+
 " Plugins                       "commands: :PlugInstall :PlugUpdate
 call plug#begin("~/.config/nvim/plugged")
  "Plug 'mhinz/vim-startify'     "add vim start page
- "Plug 'dracula/vim'            "theme
  "Plug 'ryanoasis/vim-devicons' "dev icons for nerdtree
  "Plug 'scrooloose/nerdtree'    "file explorer
  Plug 'neovim/nvim-lspconfig'
@@ -64,7 +69,7 @@ call plug#begin("~/.config/nvim/plugged")
  Plug 'tpope/vim-fugitive'      "git integration for lightline
 call plug#end()
 
-" Script - Vim jump to the last position when reopening a file
+ "Script - Vim jump to the last position when reopening a file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal! g'\"" | endif
