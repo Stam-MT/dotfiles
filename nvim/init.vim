@@ -64,8 +64,8 @@ call plug#begin("~/.config/nvim/plugged")
  "Plug 'scrooloose/nerdtree'    "file explorer
  Plug 'neovim/nvim-lspconfig'   "language server protocol
  Plug 'nvim-lua/completion-nvim'
- Plug 'rakr/vim-one'
- Plug 'itchyny/lightline.vim'
+ Plug 'sainnhe/sonokai'         "theme
+ Plug 'itchyny/lightline.vim'   "bottom bar with vimmode, branch, filename
  Plug 'tpope/vim-fugitive'      "git integration for lightline
 call plug#end()
 
@@ -76,8 +76,7 @@ if has("autocmd")
 endif
 
   "theme vim-one
-colorscheme one
-set background=dark
+colorscheme sonokai
 
   "lightline
 set showmode!                   "hide vim mode, since lighline shows it
