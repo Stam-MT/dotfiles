@@ -59,7 +59,7 @@ nnoremap <C-l> <C-w>l
 
 " Plugins                       "commands: :PlugInstall :PlugUpdate
 call plug#begin("~/.config/nvim/plugged")
- "Plug 'mhinz/vim-startify'     "add vim start page
+ Plug 'mhinz/vim-startify'      "add vim start page
  "Plug 'ryanoasis/vim-devicons' "dev icons for nerdtree
  "Plug 'scrooloose/nerdtree'    "file explorer
  Plug 'neovim/nvim-lspconfig'
