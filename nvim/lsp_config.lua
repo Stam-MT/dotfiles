@@ -47,7 +47,7 @@ end
 
 
 
---local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 local lsp = require('lspconfig')
 
 
@@ -56,9 +56,11 @@ local lsp = require('lspconfig')
 
 -- Python
 lsp.pylsp.setup{
-  on_attach=custom_attach
+  on_attach=custom_attach,
+  capabilities=capabilities
 }
 -- C#
 lsp.csharp_ls.setup{
-  on_attach=custom_attach
+  on_attach=custom_attach,
+  capabilities=capabilities
 }

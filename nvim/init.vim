@@ -84,8 +84,6 @@ endif
 
 call plug#begin("~/.config/nvim/plugged")
  Plug 'mhinz/vim-startify'      "add vim start page
- "Plug 'ryanoasis/vim-devicons' "dev icons for nerdtree
- "Plug 'scrooloose/nerdtree'    "file explorer
  Plug 'neovim/nvim-lspconfig'   "language server protocol
  Plug 'nvim-lua/completion-nvim'
  Plug 'sainnhe/sonokai'         "theme
