@@ -10,6 +10,9 @@ set showmatch			"highlight matching brackets or paranthesis
 set wildmode=longest,list       "bash-like tab completions
 set cursorline                  "highlight current cursor line
 set clipboard=unnamedplus       "use system clipboad
+set scrolloff=7                 "start scrolling 7 lines before cursor is top/bot
+set colorcolumn=80		"set vertical line to column 80
+highlight ColorColumn ctermbg=9	"display vertical line
 
 " Deactiviations
 "set swapfile!			"dont use swap files
@@ -19,18 +22,14 @@ set path+=**			"improve searching, see :help path
 set backspace=indent,eol,start	"ensure proper backspace functionality
 set undodir=~/.cache/nvim/undo	"allow undo after reopening files
 set ttyfast                     "speed up scrolling in vim
+set tabstop = 4                 "tab is 4 characters long
+set shiftwidth = 4
+set softtabstop = 4
 
 " Searching
 set incsearch			"see search results while typing, see :incsear.
 set ignorecase			"ignore case when searching
 set hlsearch incsearch		"highlight previous search pattern with incsearch
-
-
-
-" Python
-set colorcolumn=80		"show color when line reaches pep8 standards
-highlight ColorColumn ctermbg=9	"display bright red bar at color column number
-
 
 
 " Keybindings                   "inoremap: insertmode, nnoremap: normmalmode
