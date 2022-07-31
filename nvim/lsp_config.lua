@@ -1,16 +1,11 @@
-local completion = require('completion')
 
 local custom_attach = function(client, bufnr)
-    completion.on_attach()
-    -- Python specifically isn't setting omnifunc correctly, ftplugin conflict
-    vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-
-    local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-    local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-
-    buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
     -- Keybinds
+    local function
+        buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...)
+    end
+
     local opts = { noremap=true, silent=true }
     buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
     buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
@@ -28,15 +23,42 @@ local custom_attach = function(client, bufnr)
     buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
     buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
 
-    -- Keybinds (conditional on server capabilities)
-    if client.resolved_capabilities.document_formatting then
-        buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
-    elseif client.resolved_capabilities.document_range_formatting then
-        buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+    -- Set autocommands conditional on server_capabilities
+    if client.server_capabilities.document_formatting then
+        vim.cmd([[
+            augroup formatting
+                autocmd! * <buffer>
+                autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()
+                autocmd BufWritePre <buffer> lua OrganizeImports(1000)
+            augroup END
+        ]])
     end
 
+    if client.server_capabilities.document_highlight then
+        vim.cmd([[
+            augroup lsp_document_highlight
+                autocmd! * <buffer>
+                autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
+                autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+            augroup END
+        ]])
+    end
 end
 
+
+
+--local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 local lsp = require('lspconfig')
-lsp.pylsp.setup{on_attach=custom_attach}
-lsp.csharp_ls.setup{}
+
+
+
+-- LANGUAGE SERVERS
+
+-- Python
+lsp.pylsp.setup{
+  on_attach=custom_attach
+}
+-- C#
+lsp.csharp_ls.setup{
+  on_attach=custom_attach
+}
