@@ -22,9 +22,9 @@ set path+=**			"improve searching, see :help path
 set backspace=indent,eol,start	"ensure proper backspace functionality
 set undodir=~/.cache/nvim/undo	"allow undo after reopening files
 set ttyfast                     "speed up scrolling in vim
-set tabstop = 4                 "tab is 4 characters long
-set shiftwidth = 4
-set softtabstop = 4
+set tabstop=4                   "tab is 4 characters long
+set shiftwidth=4
+set softtabstop=4
 
 " Searching
 set incsearch			"see search results while typing, see :incsear.
