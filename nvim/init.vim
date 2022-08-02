@@ -1,71 +1,33 @@
 "    compatible with neovim v0.7.2
 
 
-
-
-
-" (De)Activations
-
-syntax on			"syntax highlighting, see :help syntax
-filetype plugin indent on	"file type detection, see :help filetype
-set number			"line numbering
-set wildmenu			"completion menu (ausprobieren was das ist)
-set smartindent			"auto indent on new lines, see :help smartindent
-set expandtab			"convert tabs to spaces
-set showmatch			"highlight matching brackets or paranthesis
-set wildmode=longest,list       "bash-like tab completions
+" Settings                      "type :help <option> to get detailed info.
+syntax on                       "syntax highlighting
+filetype plugin indent on       "file type detection
+set number                      "line numbering
+set smartindent                 "indent } and lines after {. also # is at col 0
+set expandtab                   "convert tabs to spaces
+set showmatch                   "make opening bracket blink when closing it
 set cursorline                  "highlight current cursor line
 set clipboard=unnamedplus       "use system clipboad
 set scrolloff=7                 "start scrolling 7 lines before cursor is top/bot
-set colorcolumn=80		"set vertical line to column 80
-highlight ColorColumn ctermbg=9	"display vertical line
-
-
-" Improvements
-
-set path+=**			"improve searching, see :help path
-set backspace=indent,eol,start	"ensure proper backspace functionality
+set colorcolumn=80              "set vertical line to column 80
 set undodir=~/.cache/nvim/undo	"allow undo after reopening files
-set ttyfast                     "speed up scrolling in vim
-set tabstop=4                   "tab is 4 characters long
-set shiftwidth=4
-set softtabstop=4
+set tabstop=4                   "tab is visualized as 4 whitespaces
+set shiftwidth=4                "tab size for autoindenting
+set softtabstop=4               "tab size used when inserting a tab
+set ignorecase                  "ignore case when searching
+set splitright                  "on :vsp open new split right to current buffer
+set splitbelow                  "on :sp open new split below current buffer
 
 
-" Searching
-
-set incsearch			"see search results while typing, see :incsear.
-set ignorecase			"ignore case when searching
-set hlsearch incsearch		"highlight previous search pattern with incsearch
-
-
-
-
-
-" Keybindings                   "inoremap: insertmode, nnoremap: normmalmode
-
-set splitright
-set splitbelow
+" Keybindings                   "_noremap: _ is the mode (insert, normal, viusal)
 
   "move lines of text up and down with ALT+j/k
 inoremap <A-j> <Esc>:m .+1<CR>==gi
 inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
-
-  "move splitpanes
-nnoremap <A-h> <C-W>H
-nnoremap <A-j> <C-W>J
-nnoremap <A-k> <C-W>K
-nnoremap <A-l> <C-W>L
-
-  "switch splitpanes
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-
-
 
 
 " Scripts
@@ -77,25 +39,21 @@ if has("autocmd")
 endif
 
 
-
-
-
 " Plugins                       "commands: :PlugInstall :PlugUpdate
 
 call plug#begin("~/.config/nvim/plugged")
  Plug 'mhinz/vim-startify'      "add vim start page
- Plug 'neovim/nvim-lspconfig'   "language server protocol
- Plug 'nvim-lua/completion-nvim'
  Plug 'sainnhe/sonokai'         "theme
  Plug 'itchyny/lightline.vim'   "bottom bar with vimmode, branch, filename
  Plug 'tpope/vim-fugitive'      "git integration for lightline
+ Plug 'neovim/nvim-lspconfig'   "language server protocol
  Plug 'hrsh7th/nvim-cmp'        "autocomplete
  Plug 'hrsh7th/cmp-nvim-lsp'    "autocomplete
  Plug 'hrsh7th/cmp-buffer'      "autocomplete
  Plug 'hrsh7th/cmp-path'        "autocomplete
 call plug#end()
 
-  "theme vim-one
+  "theme
 colorscheme sonokai
 
   "lightline
