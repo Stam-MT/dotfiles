@@ -81,8 +81,9 @@ write over existing characters
 ## Custom Keybinds
 
 ### File Browsing
-- tf            fuzzy search files
-- tg            live grep in files
+- tb            file brower (Telescope)
+- tf            fuzzy search files (Telescope)
+- tg            live grep in files (Telescope)
 
 ### Programming
 - space+h       hover over type / method

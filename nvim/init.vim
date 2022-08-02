@@ -64,6 +64,7 @@ call plug#begin("~/.config/nvim/plugged")
  Plug 'hrsh7th/cmp-path'        "autocomplete
 
  Plug 'nvim-telescope/telescope.nvim' "fuzzy finder
+ Plug 'nvim-telescope/telescope-file-browser.nvim' "file browsing extension
  Plug 'nvim-lua/plenary.nvim'   "Required for telescope.nvim
 call plug#end()
 
