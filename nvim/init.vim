@@ -22,6 +22,7 @@ set splitbelow                  "on :sp open new split below current buffer
 
 
 " Keybindings                   "_noremap: _ is the mode (insert, normal, viusal)
+let mapleader = " "
 
   "move lines of text up and down with ALT+j/k
 inoremap <A-j> <Esc>:m .+1<CR>==gi
@@ -61,6 +62,9 @@ call plug#begin("~/.config/nvim/plugged")
  Plug 'hrsh7th/cmp-nvim-lsp'    "autocomplete
  Plug 'hrsh7th/cmp-buffer'      "autocomplete
  Plug 'hrsh7th/cmp-path'        "autocomplete
+
+ Plug 'nvim-telescope/telescope.nvim' "fuzzy finder
+ Plug 'nvim-lua/plenary.nvim'   "Required for telescope.nvim
 call plug#end()
 
   "theme
