@@ -72,7 +72,7 @@ write over existing characters
 
 ### Splits
 - :vsp    / :sp     split vim, open new buffer of same file next / below
-- :(v)sp file       split vim, open new buffer of <file>
+- :(v)sp file       split vim, open new buffer of file
 - ctrl+w, w         switch active buffer
 - ctrl+w, h/j/k/l   switch active buffer to left, up, down, right
 - ctrl+w, H/J/K/L   move active buffer to left, up, down, right
@@ -80,13 +80,22 @@ write over existing characters
 
 ## Custom Keybinds
 
+### File Browsing
+- tf            fuzzy search files
+- tg            live grep in files
+
 ### Programming
-- gd            go to Definition
-- shift+k       hover over type / method
-- ctrl+k        signature help
-- space+rn      rename
-- gr            show references
-- space+f       formatting (only supported by some language servers)
+- space+h       hover over type / method
+- space+s       signature help
+- space+r       rename
+- space+ek      go to next error
+- space+ej      go to previous error
+- td            go to Definition (Telescope)
+- ti            go to implementation (Telescope)
+- tt            go to type definition (Telescope)
+- tr            show references (Telescope)
+- tj            jump to method / field (Telescope)
+- te            show errors (Telescope)
 
 ### Move Lines
 - alt+j,k       move whole lines up / down (in insert and visual mode)
