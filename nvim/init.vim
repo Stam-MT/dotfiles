@@ -44,6 +44,7 @@ endif
 call plug#begin("~/.config/nvim/plugged")
  Plug 'mhinz/vim-startify'      "add vim start page
  Plug 'sainnhe/sonokai'         "theme
+ Plug 'ellisonleao/glow.nvim'   "markdown previewer (:Glow)
  Plug 'itchyny/lightline.vim'   "bottom bar with vimmode, branch, filename
  Plug 'tpope/vim-fugitive'      "git integration for lightline
  Plug 'neovim/nvim-lspconfig'   "language server protocol
