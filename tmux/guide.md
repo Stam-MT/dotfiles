@@ -56,4 +56,5 @@ A window belongs to a tmux session and has multiple panes. All windows are shown
 - hold C-b + arrow  resize pane
 - !                 extract pane into own (new) window
 - z                 toggle zoom of pane
+- [                 enter copy-mode, to allow scrolling the buffer
 - { }               swap position of current pane with next / prev
