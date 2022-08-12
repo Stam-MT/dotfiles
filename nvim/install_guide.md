@@ -15,6 +15,7 @@
 # install nvim plugins mentioned in init.vim
 - open nvim
 - execute command :PluginInstall
+- sudo apt install ripgrep (required for Telescope Live Grep)
 
 
 # install language servers
