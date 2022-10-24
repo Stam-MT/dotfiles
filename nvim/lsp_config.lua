@@ -68,3 +68,8 @@ lsp.csharp_ls.setup{
   on_attach=custom_attach,
   capabilities=capabilities
 }
+-- C++
+lsp.clangd.setup{
+  on_attach=custom_attach,
+  capabilities=capabilities
+}
