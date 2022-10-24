@@ -6,7 +6,7 @@ syntax on                       "syntax highlighting
 filetype plugin indent on       "file type detection
 set number                      "line numbering
 set smartindent                 "indent } and lines after {. also # is at col 0
-set expandtab                   "convert tabs to spaces
+set noexpandtab                 "convert tabs to spaces
 set showmatch                   "make opening bracket blink when closing it
 set cursorline                  "highlight current cursor line
 set clipboard=unnamedplus       "use system clipboad
@@ -15,7 +15,7 @@ set colorcolumn=80              "set vertical line to column 80
 set undodir=~/.cache/nvim/undo	"allow undo after reopening files
 set tabstop=4                   "tab is visualized as 4 whitespaces
 set shiftwidth=4                "tab size for autoindenting
-set softtabstop=4               "tab size used when inserting a tab
+"set softtabstop=4              "tab size used when inserting a tab
 set ignorecase                  "ignore case when searching
 set splitright                  "on :vsp open new split right to current buffer
 set splitbelow                  "on :sp open new split below current buffer
