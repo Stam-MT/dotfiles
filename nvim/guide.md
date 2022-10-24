@@ -91,6 +91,7 @@ write over existing characters
 - space+r       rename
 - space+ek      go to next error
 - space+ej      go to previous error
+- space+ca      code actions
 - td            go to Definition (Telescope)
 - ti            go to implementation (Telescope)
 - tt            go to type definition (Telescope)
