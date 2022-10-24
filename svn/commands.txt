@@ -1,0 +1,20 @@
+# check repo content without downloading it
+svn list <url>
+
+# checkout / "clone" repository from url
+svn co <url> path
+
+# check working tree status
+svn status
+svn log [<path>]
+
+# add, remove and rename files from version control
+svn add <file>
+svn delete <file>
+svn move <src> <dest>
+
+# commit (and push)
+svn commit -m "message"
+
+# svn pull equivalent
+svn update <path>
