@@ -3,6 +3,7 @@ matrix-off: about-scheme true
 matrix-off: behind-the-scene true
 matrix-off: chrome-extension-scheme true
 matrix-off: chrome-scheme true
+matrix-off: esn.com true
 matrix-off: kununu.com true
 matrix-off: moz-extension-scheme true
 matrix-off: opera-scheme true
@@ -15,10 +16,13 @@ referrer-spoof: behind-the-scene false
 * * css allow
 * * frame block
 * * image allow
+* 10-10-255-242.p.thmlabs.com frame allow
 * 1drv.com * allow
 * 1st-party * allow
 * 1st-party frame allow
+* 3dmjvault.com * allow
 * 3ds2.zal-payments.com frame allow
+* acast.com * allow
 * accounts.google.com frame allow
 * accounts.youtube.com frame allow
 * adidas.com * allow
@@ -61,6 +65,9 @@ referrer-spoof: behind-the-scene false
 * azure.net * allow
 * azureedge.net * allow
 * b-cdn.net * allow
+* b2clogin.com * allow
+* backmarket.com * allow
+* backmarket.de * allow
 * bamgrid.com * allow
 * baseendpoint.chefkoch.de frame allow
 * battle.net * allow
@@ -69,6 +76,8 @@ referrer-spoof: behind-the-scene false
 * boardgamegeek.com * allow
 * bootstrapcdn.com * allow
 * bs-energy.de * allow
+* bugcrowd.com * allow
+* bugcrowdusercontent.com * allow
 * c.paypal.com frame allow
 * c1.microsoft.com * inherit
 * card-entry-service.zalando-payments.com frame allow
@@ -82,6 +91,7 @@ referrer-spoof: behind-the-scene false
 * chefkoch-cdn.de * allow
 * chefkoch.de * allow
 * christ.de * allow
+* cisco.com * allow
 * classistatic.de * allow
 * cloudflare.com * allow
 * cms-twdigitalassets.com * allow
@@ -92,6 +102,7 @@ referrer-spoof: behind-the-scene false
 * d1vzi28wh99zvq.cloudfront.net * allow
 * d1wigddrwdtsce.cloudfront.net * allow
 * d1ymi26ma8va5x.cloudfront.net * allow
+* d29ku0ooi7iqlp.cloudfront.net * allow
 * d2nvs31859zcd8.cloudfront.net * allow
 * d2v02itv0y9u9t.cloudfront.net * allow
 * d2vjef5jvl6bfs.cloudfront.net * allow
@@ -125,10 +136,12 @@ referrer-spoof: behind-the-scene false
 * ebay.de * allow
 * ebayimg.com * allow
 * ebaystatic.com * allow
+* embed.acast.com frame allow
 * emma-matratze.de * allow
 * emma-sleep.com * allow
 * epicgames.com * allow
 * erixx.de * allow
+* esn-prod.myshopify.com * allow
 * esn.com * allow
 * eventim.com * allow
 * eventim.de * allow
@@ -164,10 +177,13 @@ referrer-spoof: behind-the-scene false
 * gymshark.com * allow
 * gymshark.io * allow
 * gzhls.at * allow
+* hacker101.com * allow
 * hackthebox.com * allow
+* hackthebox.eu * allow
 * hallofpadel.com * allow
 * hcaptcha.com * allow
 * htb-cloud.com * allow
+* htb.systems * allow
 * icloud.com * allow
 * iframe.chefkoch.de frame allow
 * ikea.com * allow
@@ -205,6 +221,7 @@ referrer-spoof: behind-the-scene false
 * microsoft.com * allow
 * microsoftazuread-sso.com * allow
 * microsoftonline.com * allow
+* microsoftpersonalcontent.com * allow
 * mobile.de * allow
 * msauth.net * allow
 * msecnd.net * allow
@@ -232,6 +249,7 @@ referrer-spoof: behind-the-scene false
 * onedrive.live.com frame allow
 * oneplus.com * allow
 * oneplus.net * allow
+* opencollective.com * allow
 * openstreetmap.de * allow
 * openstreetmap.org * allow
 * opstatics.com * allow
@@ -250,6 +268,7 @@ referrer-spoof: behind-the-scene false
 * platform.twitter.com frame allow
 * player.twitch.tv frame allow
 * player.vimeo.com frame allow
+* podcast-ufo.fail * allow
 * pop-os.org * allow
 * porta-server.freetls.fastly.net * allow
 * porta.de * allow
@@ -263,6 +282,8 @@ referrer-spoof: behind-the-scene false
 * reddit.com * allow
 * redditmedia.com * allow
 * redditstatic.com * allow
+* rewe-static.de * allow
+* rewe.de * allow
 * rpstrength.com * allow
 * s-microsoft.com * allow
 * sandbox.om.dm.de frame allow
@@ -280,11 +301,13 @@ referrer-spoof: behind-the-scene false
 * shopifycloud.com * allow
 * shopifysvc.com * allow
 * siemens.com * allow
+* skillsforall.com * allow
 * skinbaron.de * allow
 * sky.com * allow
 * skyapi.onedrive.live.com frame allow
 * skyassets.com * allow
 * sndcdn.com * allow
+* socialgoodplatform.com * allow
 * sofort.com * allow
 * sonia.de * allow
 * soundcloud.com * allow
@@ -303,19 +326,26 @@ referrer-spoof: behind-the-scene false
 * steamcommunity.com * allow
 * steamstatic.com * allow
 * stevemcconnell.com * allow
+* storage.googleapis.com * allow
+* stripe.com * allow
 * synonyme.de * allow
 * system76.com * allow
 * t-online.de * allow
 * teams.microsoft.com frame allow
+* techem.de * allow
 * tenor.co * allow
 * thalia.de * allow
 * thalia.media * allow
 * thcdn.com * allow
 * thehut.net * allow
+* thinkific.com * allow
+* thmlabs.com * allow
 * thomann.de * allow
 * tiqcdn.com * allow
 * tnt-digital.com * allow
 * tnt.com * allow
+* todoist.com * allow
+* todoist.net * allow
 * tracker.gg * allow
 * trackercdn.com * allow
 * trustedshops.com * allow
@@ -369,7 +399,9 @@ referrer-spoof: behind-the-scene false
 * www.redditmedia.com frame allow
 * www.sofort.com frame allow
 * www.twitch.tv * allow
+* www.youtube-nocookie.com frame allow
 * www.youtube.com frame allow
+* youtube-nocookie.com * allow
 * youtube.com * allow
 * youtube.com frame allow
 * ytimg.com * allow
@@ -390,9 +422,12 @@ emma-matratze.de checkout.com * allow
 emma-matratze.de contentstack.com * allow
 emma-matratze.de emma-sleep.com * allow
 emma-matratze.de js.checkout.com frame allow
+esn.com esn-prod.myshopify.com * allow
 geoguessr.com facebook.net * inherit
 geoguessr.com google.com * inherit
 google.com * frame inherit
+hacker101.com www.youtube-nocookie.com frame inherit
+hacker101.com youtube-nocookie.com * inherit
 justinguitar.com b-cdn.net * allow
 linguee.com d1wigddrwdtsce.cloudfront.net * allow
 linguee.com deepl.com * allow
@@ -411,13 +446,17 @@ minecraft.net xboxlive.com * allow
 multitwitch.tv twitch.tv frame allow
 notion.so intercomcdn.com * allow
 notion.so splunkcloud.com * allow
+opencollective.com js.stripe.com frame allow
 openstreetmap.org openstreetmap.de * allow
+podcast-ufo.fail acast.com * allow
+podcast-ufo.fail embed.acast.com frame allow
 premiumkino.de datatrans.com * allow
 premiumkino.de pay.datatrans.com frame allow
 prezi.com d2pj2twnjx3fya.cloudfront.net * allow
 prezi.com d3l6c3sl8nwl6g.cloudfront.net * allow
 prezi.com prezicdn.net * allow
 prezi.com preziusercontent.com * allow
+rewe.de rewe-static.de * allow
 rpstrength.com dwxbisn8wylz3.cloudfront.net * allow
 ryanlefebvre.github.io youtube.com frame allow
 saferpay.com dkb.de * allow
@@ -426,6 +465,8 @@ saferpay.com psp-solutions.com * allow
 saferpay.com secure.dkb.de frame allow
 sciencedirect.com 1st-party * inherit
 southpark.de mtvnservices.com * allow
+techem.de b2clogin.com * allow
+todoist.com contentful.com * allow
 twitch.tv ddacn6pr5v0tl.cloudfront.net * allow
 twitter.com cms-twdigitalassets.com * allow
 ufcfightpass.com diceplatform.com * allow
