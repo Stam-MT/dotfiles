@@ -1,0 +1,2 @@
+PS1="\e[1;32m\u\e[m -> \e[1;32m\w\e[m\$ "
+alias ll="ls -al"

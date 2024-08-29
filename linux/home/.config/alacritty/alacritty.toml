@@ -1,18 +1,24 @@
 [window]
 dimensions = { columns = 150, lines = 30 }
-opacity = 0.9
+opacity = 0.975
 startup_mode = "Windowed"
 
 [scrolling]
-history = 100
 multiplier = 5
 
 [font]
 size = 10.0
 
 [colors]
-#primary.foreground = "#00f000" # default: #d8d8d8
 cursor = { text = "#000000", cursor = "#d08000" }
+normal.black = "#000000"
+normal.red = "#a00050"
+normal.green = "#00a000"
+normal.yellow = "#fff070"
+normal.blue = "#0070ff"
+normal.magenta = "#e000c0"
+normal.cyan = "#00e0ff"
+normal.white = "#ffffff"
 
 [selection]
 save_to_clipboard = true
