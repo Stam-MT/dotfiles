@@ -11,7 +11,7 @@ set showmatch                   "make opening bracket blink when closing it
 set cursorline                  "highlight current cursor line
 set clipboard=unnamedplus       "use system clipboad
 set scrolloff=7                 "start scrolling 7 lines before cursor is top/bot
-set colorcolumn=80              "set vertical line to column 80
+"set colorcolumn=80              "set vertical line to column 80
 set undodir=~/.cache/nvim/undo	"allow undo after reopening files
 set tabstop=4                   "tab is visualized as 4 whitespaces
 set shiftwidth=4                "tab size for autoindenting
@@ -35,6 +35,15 @@ nnoremap <leader>bn :bnext<CR>
 nnoremap <leader>bp :bprevious<CR>
 nnoremap <leader>bf :bfirst<CR>
 nnoremap <leader>bl :blast<CR>
+
+"use jj in insert mode to get to command mode
+inoremap jj <esc>
+"hide search highlighting
+nnoremap <leader>\ :nohlsearch<CR>
+"move search match line to middle (vertically)
+nnoremap n nzz
+"move search match line to middle (vertically)
+nnoremap N Nzz
 
 
 " Scripts

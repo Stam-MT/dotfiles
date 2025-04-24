@@ -5,7 +5,7 @@
 
 # setup init file
 - create directory ~/.config/nvim
-- copy init.vim file to ~/.config/nvim
+- copy init.vim file to ~/.config/nvim/
 
 
 # install vim plugin manager vimplug

@@ -1,0 +1,8 @@
+[alias]
+	flog = log --graph --abbrev-commit --pretty='format:%Cgreen%cn  %C(auto)%d%Creset %s [%h]' --all
+	news = flog --date-order
+[user]
+	name = Marcel Tschada
+	email = gulbp@mailbox.org
+[core]
+	editor = vim

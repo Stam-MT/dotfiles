@@ -1,0 +1,6 @@
+alias ll="ls -alh"
+alias ls="ls --color=auto"
+alias grep="grep --color=auto"
+alias vim=nvim
+
+PS1="\[\033[1;32m\]\u\[\033[0m\] -> \[\033[1;32m\]\w\[\033[0m\] \$ "
